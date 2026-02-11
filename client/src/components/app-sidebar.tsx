@@ -1,6 +1,6 @@
 import { useLocation, Link } from "wouter";
 import {
-  Home, Users, BookOpen, Gamepad2, Monitor, Palette, Target
+  Home, Users, BookOpen, Gamepad2, Monitor, Palette, Target, FlaskConical
 } from "lucide-react";
 import {
   Sidebar,
@@ -22,6 +22,7 @@ const navItems = [
   { title: "Story Episodes", url: "/story", icon: BookOpen },
   { title: "Game Design", url: "/game-design", icon: Gamepad2 },
   { title: "Audience", url: "/audience", icon: Target },
+  { title: "Research", url: "/research", icon: FlaskConical },
   { title: "Platform & Tech", url: "/platform", icon: Monitor },
   { title: "Stylistic Vision", url: "/style", icon: Palette },
 ];
