@@ -40,15 +40,25 @@ export default function Home() {
             </Badge>
           </motion.div>
 
-          <motion.h1
-            className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-4 tracking-tight"
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            data-testid="text-hero-title"
+            className="mb-4"
           >
-            GO KOALA!
-          </motion.h1>
+            <img
+              src="/images/go-koala-logo.png"
+              alt="GO KOALA!"
+              className="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px] mx-auto drop-shadow-2xl"
+              data-testid="img-game-logo"
+            />
+            <h1
+              className="sr-only"
+              data-testid="text-hero-title"
+            >
+              GO KOALA!
+            </h1>
+          </motion.div>
 
           <motion.p
             className="text-lg sm:text-xl text-white/85 max-w-2xl mb-3 font-light"
