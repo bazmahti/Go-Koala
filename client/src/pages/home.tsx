@@ -255,6 +255,9 @@ export default function Home() {
               <Link href="/game-design">
                 <Button variant="outline" data-testid="link-game-design">Game Design</Button>
               </Link>
+              <Link href="/audience">
+                <Button variant="outline" data-testid="link-audience">Audience</Button>
+              </Link>
               <Link href="/platform">
                 <Button variant="outline" data-testid="link-platform">Platform & Tech</Button>
               </Link>

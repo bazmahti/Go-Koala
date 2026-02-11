@@ -1,6 +1,6 @@
 import { useLocation, Link } from "wouter";
 import {
-  Home, Users, BookOpen, Gamepad2, Monitor, Palette
+  Home, Users, BookOpen, Gamepad2, Monitor, Palette, Target
 } from "lucide-react";
 import {
   Sidebar,
@@ -21,6 +21,7 @@ const navItems = [
   { title: "Characters", url: "/characters", icon: Users },
   { title: "Story Episodes", url: "/story", icon: BookOpen },
   { title: "Game Design", url: "/game-design", icon: Gamepad2 },
+  { title: "Audience", url: "/audience", icon: Target },
   { title: "Platform & Tech", url: "/platform", icon: Monitor },
   { title: "Stylistic Vision", url: "/style", icon: Palette },
 ];

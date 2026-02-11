@@ -14,6 +14,7 @@ Interactive proposal website for "GO KOALA!" - an animated episodic series and m
 - `/characters` - Character profiles for all 8 characters with images, traits, and game roles
 - `/story` - 8 episodic story breakdowns with gameplay elements and interactive threads
 - `/game-design` - Genre analysis, gamification systems, multiplayer modes, narrative design
+- `/audience` - Target audience & demographics: biodiversity messaging, Indigenous culture, age segments, market insights, engagement strategies
 - `/platform` - Platform comparison (PC/Console/Mobile/Web), engine/language recommendations
 - `/style` - Art direction, animation style, sound design, camera systems, visual references
 

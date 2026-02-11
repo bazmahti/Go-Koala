@@ -13,6 +13,7 @@ import Story from "@/pages/story";
 import GameDesign from "@/pages/game-design";
 import Platform from "@/pages/platform";
 import Style from "@/pages/style";
+import Audience from "@/pages/audience";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/characters" component={Characters} />
       <Route path="/story" component={Story} />
       <Route path="/game-design" component={GameDesign} />
+      <Route path="/audience" component={Audience} />
       <Route path="/platform" component={Platform} />
       <Route path="/style" component={Style} />
       <Route component={NotFound} />
