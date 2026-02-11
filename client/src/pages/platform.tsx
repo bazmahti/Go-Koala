@@ -6,7 +6,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import {
   Monitor, Smartphone, Globe, Code, Server, Cpu,
-  ArrowRight, CheckCircle2, Star, Zap, Gamepad2
+  ArrowRight, CheckCircle2, Star, Zap, Gamepad2,
+  Rocket, Calendar, CircleDot, Tv, Package, Users
 } from "lucide-react";
 
 const fadeUp = {
@@ -226,6 +227,7 @@ export default function Platform() {
             <TabsTrigger value="platforms" data-testid="tab-platforms">Delivery Platforms</TabsTrigger>
             <TabsTrigger value="languages" data-testid="tab-languages">Engine & Language</TabsTrigger>
             <TabsTrigger value="architecture" data-testid="tab-architecture">Technical Architecture</TabsTrigger>
+            <TabsTrigger value="roadmap" data-testid="tab-roadmap">Delivery Roadmap</TabsTrigger>
           </TabsList>
 
           <TabsContent value="platforms">
@@ -444,6 +446,231 @@ export default function Platform() {
                   </Card>
                 </motion.div>
               ))}
+            </motion.div>
+          </TabsContent>
+
+          <TabsContent value="roadmap">
+            <motion.div
+              className="space-y-6"
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.div variants={fadeUp} custom={0}>
+                <Card className="p-6" data-testid="card-roadmap-overview">
+                  <div className="flex items-start gap-3">
+                    <Rocket className="w-6 h-6 text-accent mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-base mb-2">Delivery Strategy Overview</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        GO KOALA! follows a phased release strategy — building audience through a free web demo 
+                        and animated series, then launching the full game on PC via Steam Early Access, expanding 
+                        to consoles and mobile over 18 months. Each phase feeds the next, creating compound 
+                        awareness and revenue streams.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+
+              {[
+                {
+                  phase: "Phase 1",
+                  title: "Foundation & Awareness",
+                  timeline: "Months 1 - 6",
+                  icon: Globe,
+                  status: "Build",
+                  deliverables: [
+                    {
+                      name: "Playable Web Demo",
+                      platform: "Browser (WebGL)",
+                      desc: "A 15-minute slice of Episode 1: 'Leaving Home'. Players guide Ko through the opening territory, meet Little Patty, and encounter their first ecosystem puzzle. Zero-install — shareable via link.",
+                      purpose: "Audience building, press coverage, school program distribution, conservation partner outreach",
+                    },
+                    {
+                      name: "Animated Series Pilot",
+                      platform: "YouTube / Streaming pitch",
+                      desc: "Full animated pilot episode (22 minutes) rendered in-engine using Unity Timeline. Showcases the painterly realism art style, voice performances, and the biodiversity message.",
+                      purpose: "Streaming platform pitches (ABC, Stan, Netflix), festival submissions, social media marketing",
+                    },
+                    {
+                      name: "Community & Socials",
+                      platform: "Discord / Social media",
+                      desc: "Launch the GO KOALA! community: character reveals, behind-the-scenes art development, conservation partner announcements, and early feedback from the web demo.",
+                      purpose: "Wishlist building, community-driven development feedback, brand awareness",
+                    },
+                  ],
+                },
+                {
+                  phase: "Phase 2",
+                  title: "PC Launch — Steam Early Access",
+                  timeline: "Months 7 - 12",
+                  icon: Monitor,
+                  status: "Launch",
+                  deliverables: [
+                    {
+                      name: "Episodes 1-4 (Early Access)",
+                      platform: "PC (Steam)",
+                      desc: "The first half of Season 1: Leaving Home, Crossing the Creek, Highway of Doom, and The Attack. Full co-op multiplayer (2-4 players), habitat restoration mechanics, and the AI translator introduction.",
+                      purpose: "Primary revenue, community feedback loop, Steam review momentum, content creator coverage",
+                    },
+                    {
+                      name: "Story Forge (Community Tools)",
+                      platform: "Steam Workshop",
+                      desc: "Player-created stories and levels using a built-in editor. Indigenous art-inspired asset packs (created with community consultation) available for community creators.",
+                      purpose: "Extends content lifespan, builds modding community, generates organic social media content",
+                    },
+                    {
+                      name: "Conservation Partnerships",
+                      platform: "In-game + real world",
+                      desc: "Partner with Australian wildlife organisations. In-game species profiles link to real conservation efforts. Optional donations integrated at natural story moments.",
+                      purpose: "Brand alignment, education credibility, potential grant funding, media coverage",
+                    },
+                  ],
+                },
+                {
+                  phase: "Phase 3",
+                  title: "Full Release & Console Expansion",
+                  timeline: "Months 12 - 18",
+                  icon: Gamepad2,
+                  status: "Expand",
+                  deliverables: [
+                    {
+                      name: "Episodes 5-8 + Full Release",
+                      platform: "PC (Steam / Epic)",
+                      desc: "Complete Season 1: Human World, The Voice of the Forest, Fame Spiral, and Home Again. Exit Early Access with full multiplayer, competitive modes, and the complete narrative arc.",
+                      purpose: "Full-price launch, expanded audience, Steam sale events, content creator resurgence",
+                    },
+                    {
+                      name: "Nintendo Switch Version",
+                      platform: "Nintendo eShop",
+                      desc: "Optimised for handheld and couch co-op. Touch-friendly UI for portable play. Family-friendly certification and parental controls built in.",
+                      purpose: "Access the family audience directly — Switch is the primary platform for 8-14 year-olds and family co-play",
+                    },
+                    {
+                      name: "PlayStation / Xbox",
+                      platform: "PS5 / Xbox Series",
+                      desc: "Console versions with enhanced visuals, DualSense haptic integration (PS5), and platform-specific achievements. Cross-save with PC.",
+                      purpose: "Reach the 15-25 young adult segment, leverage console ecosystem marketing",
+                    },
+                  ],
+                },
+                {
+                  phase: "Phase 4",
+                  title: "Mobile & Ecosystem Growth",
+                  timeline: "Months 18 - 24",
+                  icon: Smartphone,
+                  status: "Scale",
+                  deliverables: [
+                    {
+                      name: "Mobile Companion App",
+                      platform: "iOS / Android (tablet-first)",
+                      desc: "Simplified explorer mode for younger players (5-7). Colony management, species journal, AI translator mini-game, and bush tucker identification. Syncs with the full game.",
+                      purpose: "Reach the family/co-viewing audience, educational market, conservation awareness at scale",
+                    },
+                    {
+                      name: "Animated Series — Season 1",
+                      platform: "Streaming (ABC / Stan / Netflix)",
+                      desc: "Full 10-episode animated series based on the game's Season 1 arc. Rendered in-engine with cinematic polish. Each episode connects to game content players can explore.",
+                      purpose: "Dual-medium IP generates 2x licensing revenue, drives new players to the game, extends brand reach globally",
+                    },
+                    {
+                      name: "Educational Programme",
+                      platform: "Schools / Museums / Web",
+                      desc: "Classroom-ready biodiversity curriculum built around GO KOALA! content. Teacher guides, interactive web modules, and museum exhibit partnerships. Indigenous knowledge modules created with community input.",
+                      purpose: "Institutional revenue, long-tail brand awareness, conservation impact measurement, cultural respect and education",
+                    },
+                  ],
+                },
+                {
+                  phase: "Phase 5",
+                  title: "Season 2 & Beyond",
+                  timeline: "Months 24+",
+                  icon: Star,
+                  status: "Grow",
+                  deliverables: [
+                    {
+                      name: "Season 2 Content",
+                      platform: "All platforms",
+                      desc: "New episodes, new regions of the Australian bush, additional playable species, and deeper Indigenous cultural storylines. Community-voted story directions from Story Forge influence the narrative.",
+                      purpose: "Sustained revenue, community retention, expanded world-building",
+                    },
+                    {
+                      name: "Merchandise & Licensing",
+                      platform: "Retail / Online",
+                      desc: "Plush toys, apparel, educational kits, art books featuring Indigenous artist collaborations, and conservation charity tie-in products. The cast of 8+ characters provides deep product line potential.",
+                      purpose: "Ancillary revenue, brand visibility in physical spaces, conservation fundraising",
+                    },
+                    {
+                      name: "Global Localisation",
+                      platform: "All platforms",
+                      desc: "Full localisation into major languages. Partnerships with international conservation organisations to adapt the biodiversity message to local ecosystems while keeping the Australian heart.",
+                      purpose: "Global market expansion, international streaming deals, educational programme licensing",
+                    },
+                  ],
+                },
+              ].map((phase, i) => (
+                <motion.div key={phase.phase} variants={fadeUp} custom={i + 1}>
+                  <Card className="p-6" data-testid={`card-phase-${i + 1}`}>
+                    <div className="flex flex-wrap items-center gap-3 mb-4">
+                      <div className="p-2 rounded-md bg-accent/10">
+                        <phase.icon className="w-5 h-5 text-accent" />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <h3 className="font-serif text-lg font-bold">{phase.phase}: {phase.title}</h3>
+                          <Badge variant="secondary">{phase.status}</Badge>
+                        </div>
+                        <div className="flex items-center gap-1.5 mt-0.5">
+                          <Calendar className="w-3 h-3 text-muted-foreground" />
+                          <span className="text-xs text-muted-foreground font-mono">{phase.timeline}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-4">
+                      {phase.deliverables.map((d) => (
+                        <Card key={d.name} className="p-4">
+                          <div className="flex items-start gap-2 mb-2">
+                            <Package className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                            <div className="min-w-0">
+                              <h4 className="font-semibold text-sm">{d.name}</h4>
+                              <Badge variant="outline" className="text-[10px] mt-1">{d.platform}</Badge>
+                            </div>
+                          </div>
+                          <p className="text-xs text-muted-foreground leading-relaxed mb-3">{d.desc}</p>
+                          <div className="bg-muted/40 rounded-md p-2.5">
+                            <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Purpose</span>
+                            <p className="text-xs text-muted-foreground leading-relaxed mt-0.5">{d.purpose}</p>
+                          </div>
+                        </Card>
+                      ))}
+                    </div>
+                  </Card>
+                </motion.div>
+              ))}
+
+              <motion.div variants={fadeUp} custom={6}>
+                <Card className="p-6 border-accent/30" data-testid="card-revenue-model">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Star className="w-5 h-5 text-accent" />
+                    <h3 className="font-serif text-lg font-bold">Revenue Model Summary</h3>
+                  </div>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    {[
+                      { stream: "Game Sales", detail: "Premium pricing on PC & console, Early Access discount, seasonal sales", phase: "Phase 2-3" },
+                      { stream: "Animated Series", detail: "Streaming platform licensing, international distribution, educational broadcast rights", phase: "Phase 4-5" },
+                      { stream: "Mobile & Companion", detail: "Premium app or ethical free-to-play, cosmetic-only purchases, no pay-to-win", phase: "Phase 4" },
+                      { stream: "Merch & Licensing", detail: "Plush toys, Indigenous artist collabs, educational kits, conservation partnerships", phase: "Phase 5+" },
+                    ].map((rev) => (
+                      <Card key={rev.stream} className="p-3">
+                        <h4 className="font-semibold text-sm mb-1">{rev.stream}</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed mb-2">{rev.detail}</p>
+                        <Badge variant="outline" className="text-[10px]">{rev.phase}</Badge>
+                      </Card>
+                    ))}
+                  </div>
+                </Card>
+              </motion.div>
             </motion.div>
           </TabsContent>
         </Tabs>
