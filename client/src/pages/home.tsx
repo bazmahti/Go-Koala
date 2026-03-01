@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { ChevronDown, Gamepad2, Tv, Users, Sparkles } from "lucide-react";
+import { ChevronDown, Gamepad2, Tv, Users, Sparkles, FileDown } from "lucide-react";
 import { usePageTitle } from "@/hooks/use-page-title";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { generateHandoverPDF } from "@/lib/generate-pdf";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -274,6 +275,14 @@ export default function Home() {
               <Link href="/style">
                 <Button variant="outline" data-testid="link-style">Stylistic Vision</Button>
               </Link>
+              <Button
+                variant="default"
+                onClick={() => generateHandoverPDF()}
+                data-testid="button-download-pdf-home"
+              >
+                <FileDown className="w-4 h-4 mr-2" />
+                Download Handover PDF
+              </Button>
             </motion.div>
           </motion.div>
         </div>

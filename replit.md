@@ -15,14 +15,20 @@ Interactive proposal website for "GO KOALA!" - an animated episodic series and m
 - `/story` - 8 episodic story breakdowns with gameplay elements and interactive threads
 - `/game-design` - Genre analysis, gamification systems, multiplayer modes, narrative design
 - `/audience` - Target audience & demographics: biodiversity messaging, Indigenous culture, age segments, market insights, engagement strategies
-- `/platform` - Platform comparison (PC/Console/Mobile/Web), engine/language recommendations
+- `/platform` - Platform comparison (PC/Console/Mobile/Web), engine/language recommendations, delivery roadmap (5-phase release strategy)
 - `/style` - Art direction, animation style, sound design, camera systems, visual references
 
 ## Key Components
-- `client/src/components/app-sidebar.tsx` - Navigation sidebar
+- `client/src/components/app-sidebar.tsx` - Navigation sidebar with PDF download button
 - `client/src/components/theme-provider.tsx` - Light/dark theme support
 - `client/src/components/theme-toggle.tsx` - Theme toggle button
 - `client/src/pages/*` - All page components
+- `client/src/lib/generate-pdf.ts` - Client-side PDF generator (jsPDF) for senior developer handover document
+
+## PDF Handover
+- Downloadable from sidebar button and home page
+- Comprehensive document compiling all project sections: overview, characters, story, game design, audience, style, platform, roadmap, revenue model, and developer notes
+- Uses jsPDF for client-side generation — no server dependency
 
 ## Generated Images
 Character illustrations and hero landscape stored in `client/public/images/`

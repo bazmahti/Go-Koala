@@ -1,7 +1,9 @@
 import { useLocation, Link } from "wouter";
 import {
-  Home, Users, BookOpen, Gamepad2, Monitor, Palette, Target, FlaskConical
+  Home, Users, BookOpen, Gamepad2, Monitor, Palette, Target, FlaskConical, FileDown
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { generateHandoverPDF } from "@/lib/generate-pdf";
 import {
   Sidebar,
   SidebarContent,
@@ -77,7 +79,17 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="p-4">
+      <SidebarFooter className="p-4 space-y-3">
+        <Button
+          variant="outline"
+          size="sm"
+          className="w-full justify-start gap-2 text-xs"
+          onClick={() => generateHandoverPDF()}
+          data-testid="button-download-pdf"
+        >
+          <FileDown className="w-3.5 h-3.5" />
+          Download Handover PDF
+        </Button>
         <div className="text-[11px] text-sidebar-foreground/50 space-y-1">
           <p>Ralph Lycett Tyrrell</p>
           <p>Dr Baz (Barry Ferrier)</p>
