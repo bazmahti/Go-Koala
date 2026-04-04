@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "FlQiurZkWPzwDDRZV1OLH"
+uri = "file://GO-KOALA-Animation-Visual-Guide.md"
+type = "text"
+title = "GO KOALA! — Animation & Visual Style Guide"
