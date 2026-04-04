@@ -1,6 +1,6 @@
 import { useLocation, Link } from "wouter";
 import {
-  Home, Users, BookOpen, Gamepad2, Monitor, Palette, Target, FlaskConical, FileDown
+  Home, Users, BookOpen, Gamepad2, Monitor, Palette, Target, FlaskConical, FileDown, Play
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { generateHandoverPDF } from "@/lib/generate-pdf";
@@ -27,6 +27,7 @@ const navItems = [
   { title: "Research", url: "/research", icon: FlaskConical },
   { title: "Platform & Tech", url: "/platform", icon: Monitor },
   { title: "Stylistic Vision", url: "/style", icon: Palette },
+  { title: "Play Demo", url: "/game", icon: Play },
 ];
 
 export function AppSidebar() {

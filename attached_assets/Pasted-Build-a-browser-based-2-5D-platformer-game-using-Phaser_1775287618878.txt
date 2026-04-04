@@ -1,0 +1,53 @@
+Build a browser-based 2.5D platformer game using Phaser.js 3 (loaded via CDN). 
+
+This is GO KOALA! — Episode 1, Scene 1: The Departure.
+
+PROJECT STRUCTURE:
+index.html → loads Phaser and main.js
+main.js → all game logic
+style.css → minimal, black background, canvas centred
+
+SCENE: Ko's Home Tree
+A 2.5D side-scrolling scene with parallax depth layers:
+- Layer 1 (far): pale blue-grey sky, dusty and warm
+- Layer 2 (mid): silhouetted distant eucalyptus trees, soft olive green
+- Layer 3 (near): detailed foreground bush, amber-green
+- Layer 4 (ground): red-brown earth
+
+Characters (all placeholders — coloured shapes with labels):
+- KO: small grey-brown rounded rectangle, "Ko" label. Starts on a tree branch (elevated platform)
+- FLO: slightly larger grey rectangle, "Flo" label. On same branch, stationary
+- GRUFF: larger dark grey rectangle, "Gruff" label. Enters from right after 3 seconds
+
+MECHANICS:
+- Ko can move left/right (arrow keys or WASD), jump (space), 
+- Ko can climb the home tree (a brown vertical rectangle) by pressing up near it
+- Platforms: the main tree branch at height 300px, ground at height 550px
+- Arcade physics, gravity
+
+STORY SEQUENCE:
+1. Scene opens — Ko and Flo on the branch. Dialogue bubble: "Home. Safe. Warm."
+2. After 3 seconds — Gruff enters from right, stops 200px from Ko
+3. Dialogue: Gruff says "THIS IS MY TERRITORY." Ko says "I WAS HERE FIRST."
+4. After 4 seconds standoff — Ko falls asleep (play a 'zzz' floating text animation)
+5. Gruff stares, confused. Gruff exits left after 2 seconds.
+6. Ko wakes. Choice prompt appears on screen:
+   → [LEAVE and find your own territory] 
+   → [STAY and fight for home]
+7. If STAY: Gruff returns bigger, Ko gets nudged off branch, same choice appears again. 
+   (The game gently makes leaving the right choice.)
+8. If LEAVE: New prompt: "Say goodbye to Flo?" → [YES] or [NOT NOW]
+9. If YES: Ko moves to Flo, dialogue "I'll come back, Mum." Flo: "Be brave, little one." 
+   Soft yellow glow around both for 2 seconds.
+10. Ko jumps down from tree to ground. Screen pans right. 
+    Title card: "Episode 1 — The Departure". Fade to next scene placeholder.
+
+UI:
+- Dialogue appears in a simple rounded box at bottom of screen
+- Choice buttons are large, clear, clickable
+- Small label top-left: "GO KOALA! — Episode 1"
+- Placeholder note top-right in small text: "[Art assets: placeholder]"
+
+Keep all code in main.js. 
+Add comments marking every placeholder with: // PLACEHOLDER — replace with: [description]
+Make it easy to swap placeholder rectangles for real sprite sheets later.

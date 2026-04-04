@@ -10,6 +10,7 @@ Interactive proposal website for "GO KOALA!" - an animated episodic series and m
 - **Fonts**: Plus Jakarta Sans (body), Playfair Display (headings), Fira Code (mono)
 
 ## Pages
+- `/game` - Playable Demo: Phaser.js 3 browser game — Episode 1 Scene 1 "The Departure" with story sequence, choices, and 2.5D placeholder art
 - `/` - Home: Hero section, concept overview, value propositions
 - `/characters` - Character profiles for all 8 characters with images, traits, and game roles
 - `/story` - 8 episodic story breakdowns with gameplay elements and interactive threads

@@ -15,6 +15,7 @@ import Platform from "@/pages/platform";
 import Style from "@/pages/style";
 import Audience from "@/pages/audience";
 import Research from "@/pages/research";
+import Game from "@/pages/game";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -28,6 +29,7 @@ function Router() {
       <Route path="/research" component={Research} />
       <Route path="/platform" component={Platform} />
       <Route path="/style" component={Style} />
+      <Route path="/game" component={Game} />
       <Route component={NotFound} />
     </Switch>
   );
