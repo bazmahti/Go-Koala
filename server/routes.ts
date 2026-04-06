@@ -8,9 +8,12 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  // Serve client/public directory explicitly so files like /ep1/index.html
-  // are reachable in dev mode before Vite's catch-all intercepts them.
-  app.use(express.static(path.resolve(import.meta.dirname, "..", "client", "public")));
+  // In development, Vite's middleware doesn't auto-serve client/public files
+  // (e.g. /ep1/main.js), so we serve them explicitly here.
+  // In production this is handled by serveStatic() via dist/public.
+  if (process.env.NODE_ENV !== "production") {
+    app.use(express.static(path.resolve(process.cwd(), "client", "public")));
+  }
 
   return httpServer;
 }
