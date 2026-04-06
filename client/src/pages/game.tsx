@@ -22,7 +22,7 @@ export default function Game() {
           transition={{ duration: 0.4 }}
         >
           <iframe
-            src="/game/index.html"
+            src="/ep1/index.html"
             title="GO KOALA! Episode 1 — The Departure"
             className="w-full rounded-md border border-white/10 shadow-2xl"
             style={{ aspectRatio: "16/9", display: "block" }}
