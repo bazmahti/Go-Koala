@@ -5,9 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GO KOALA! — Episode 1: The Departure</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+  <style>
+    #loading-msg {
+      position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      color: #ffe090; font-family: monospace; font-size: 14px; text-align: center;
+      background: #1a0a00cc; padding: 16px 24px; border-radius: 8px;
+      border: 1px solid #ffe09044; pointer-events: none; z-index: 999;
+    }
+    #error-msg {
+      display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      color: #ff6060; font-family: monospace; font-size: 13px; text-align: left;
+      background: #1a0000ee; padding: 16px 24px; border-radius: 8px;
+      border: 1px solid #ff606044; max-width: 80vw; white-space: pre-wrap; z-index: 999;
+    }
+  </style>
 </head>
 <body>
-  <script src="main.js"></script>
+  <div id="loading-msg">Loading GO KOALA! Episode 1…</div>
+  <div id="error-msg"></div>
+
+  <script>
+    window.onerror = function(msg, src, line, col, err) {
+      var el = document.getElementById('error-msg');
+      el.style.display = 'block';
+      el.textContent = '⚠ Game error:\n' + msg + '\n\nSource: ' + src + ':' + line;
+      document.getElementById('loading-msg').style.display = 'none';
+      return false;
+    };
+  </script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"
+    onerror="document.getElementById('error-msg').style.display='block'; document.getElementById('error-msg').textContent='⚠ Failed to load Phaser from CDN.\nCheck your internet connection or try refreshing.'; document.getElementById('loading-msg').style.display='none';"
+    onload="document.getElementById('loading-msg').textContent='Starting game…'">
+  </script>
+  <script src="main.js"
+    onerror="document.getElementById('error-msg').style.display='block'; document.getElementById('error-msg').textContent='⚠ Failed to load main.js'; document.getElementById('loading-msg').style.display='none';">
+  </script>
+  <script>
+    // Hide loading message once Phaser starts (it replaces the canvas)
+    if (typeof Phaser !== 'undefined') {
+      document.getElementById('loading-msg').style.display = 'none';
+    }
+  </script>
 </body>
 </html>

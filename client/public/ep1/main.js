@@ -1011,7 +1011,7 @@ const config = {
   width: GAME_W,
   height: GAME_H,
   backgroundColor: '#000000',
-  parent: document.body,
+  parent: window.__PHASER_PARENT__ || document.body,
   physics: {
     default: 'arcade',
     arcade: {
@@ -1027,3 +1027,4 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
+if (typeof window !== 'undefined') window.__koalaGame = game;
