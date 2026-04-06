@@ -224,21 +224,33 @@ class DepartureScene extends Phaser.Scene {
     this.ko = this._createCharacter(260, branchY - 22, 26, 24, PALETTE.ko, 'Ko', 'You');
     this.ko.physics.setCollideWorldBounds(true);
 
-    // Ko eye blink (simple dot)
-    this.koEye = this.add.graphics();
-    this.koEye.fillStyle(0x222222, 1);
-    this.koEye.fillCircle(4, 2, 3);
-    this.koEye.setDepth(12);
+    // Ko eyelid blink — two small covers over the drawn eyes
+    // PLACEHOLDER — replace with: animated eyelid sprites (open/half/closed frames)
+    this.koEyelidL = this.add.graphics();
+    this.koEyelidR = this.add.graphics();
+    this.koEyelidL.fillStyle(0xb0a090, 1);
+    this.koEyelidR.fillStyle(0xb0a090, 1);
+    this.koEyelidL.fillEllipse(0, 0, 7, 5);
+    this.koEyelidR.fillEllipse(0, 0, 7, 5);
+    this.koEyelidL.setDepth(12).setAlpha(0);
+    this.koEyelidR.setDepth(12).setAlpha(0);
 
-    // Blink timer
-    this.time.addEvent({
-      delay: 3200,
-      loop: true,
-      callback: () => {
-        this.koEye.setAlpha(0);
-        this.time.delayedCall(120, () => this.koEye.setAlpha(1));
-      }
-    });
+    // Blink timer — randomised natural rhythm
+    const scheduleBlink = () => {
+      const delay = Phaser.Math.Between(2800, 5000);
+      this.time.delayedCall(delay, () => {
+        // Close
+        this.koEyelidL.setAlpha(1);
+        this.koEyelidR.setAlpha(1);
+        this.time.delayedCall(80, () => {
+          // Open
+          this.koEyelidL.setAlpha(0);
+          this.koEyelidR.setAlpha(0);
+          scheduleBlink();
+        });
+      });
+    };
+    scheduleBlink();
   }
 
   _createCharacter(x, y, w, h, color, name, role) {
@@ -943,9 +955,11 @@ class DepartureScene extends Phaser.Scene {
     this._syncContainer(this.flo);
     this._syncContainer(this.gruff);
 
-    // Sync Ko eye
-    this.koEye.x = this.ko.x + this.ko._w - 8;
-    this.koEye.y = this.ko.y + 5;
+    // Sync eyelid blink covers over Ko's drawn eyes
+    this.koEyelidL.x = this.ko.x + this.ko._w * 0.3;
+    this.koEyelidL.y = this.ko.y + this.ko._h * 0.22;
+    this.koEyelidR.x = this.ko.x + this.ko._w * 0.7;
+    this.koEyelidR.y = this.ko.y + this.ko._h * 0.22;
 
     // Player control (only when enabled)
     if (!this.playerControlEnabled) return;
