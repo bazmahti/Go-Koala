@@ -246,36 +246,123 @@ class DepartureScene extends Phaser.Scene {
     container.setDepth(10);
 
     const g = this.add.graphics();
-    // Shadow
+
+    // ── Shadow ──
     g.fillStyle(PALETTE.shadow, 0.18);
     g.fillEllipse(w / 2, h + 4, w * 0.85, 8);
-    // Body
-    g.fillStyle(color, 1);
-    g.fillRoundedRect(0, 0, w, h, 6);
-    // Slight highlight on top
-    g.fillStyle(0xffffff, 0.12);
-    g.fillRoundedRect(3, 2, w - 6, h * 0.4, 4);
-    // Ears (for koalas)
-    if (color === PALETTE.ko || color === PALETTE.flo || color === PALETTE.gruff) {
-      g.fillStyle(color, 1);
-      g.fillCircle(4, -4, 5);
-      g.fillCircle(w - 4, -4, 5);
-      g.fillStyle(0xd9a0a0, 0.5);
-      g.fillCircle(4, -4, 3);
-      g.fillCircle(w - 4, -4, 3);
+
+    if (name === 'Ko') {
+      // PLACEHOLDER — replace with Ko sprite sheet
+      // Small, rounded, warm grey-brown — juvenile koala
+      // Big fluffy ears
+      g.fillStyle(0xb0a090, 1);
+      g.fillCircle(5, -6, 8);
+      g.fillCircle(w - 5, -6, 8);
+      // Pale inner ear
+      g.fillStyle(0xf0c0b0, 1);
+      g.fillCircle(5, -6, 5);
+      g.fillCircle(w - 5, -6, 5);
+      // Body — warm light grey-brown
+      g.fillStyle(0xb0a090, 1);
+      g.fillRoundedRect(0, 0, w, h, 8);
+      // Pale chest patch
+      g.fillStyle(0xd8c8b8, 1);
+      g.fillEllipse(w / 2, h * 0.6, w * 0.55, h * 0.5);
+      // Face highlight
+      g.fillStyle(0xffffff, 0.15);
+      g.fillRoundedRect(4, 2, w - 8, h * 0.35, 5);
+      // Dark nose
+      g.fillStyle(0x2a2020, 1);
+      g.fillEllipse(w / 2, h * 0.3, w * 0.35, h * 0.22);
+      // Eyes — wide, expressive
+      g.fillStyle(0x111111, 1);
+      g.fillCircle(w * 0.3, h * 0.22, 2.5);
+      g.fillCircle(w * 0.7, h * 0.22, 2.5);
+      // Eye shine
+      g.fillStyle(0xffffff, 0.8);
+      g.fillCircle(w * 0.3 + 1, h * 0.22 - 1, 1);
+      g.fillCircle(w * 0.7 + 1, h * 0.22 - 1, 1);
+
+    } else if (name === 'Flo') {
+      // PLACEHOLDER — replace with Flo sprite sheet
+      // Slightly larger, warmer tone, calm maternal look
+      // Larger rounder ears
+      g.fillStyle(0x9a8878, 1);
+      g.fillCircle(6, -7, 9);
+      g.fillCircle(w - 6, -7, 9);
+      g.fillStyle(0xeab0a0, 1);
+      g.fillCircle(6, -7, 5);
+      g.fillCircle(w - 6, -7, 5);
+      // Body — warm mid grey
+      g.fillStyle(0x9a8878, 1);
+      g.fillRoundedRect(0, 0, w, h, 8);
+      // Chest patch — softer, wider
+      g.fillStyle(0xc8b8a8, 1);
+      g.fillEllipse(w / 2, h * 0.58, w * 0.6, h * 0.55);
+      // Face highlight
+      g.fillStyle(0xffffff, 0.12);
+      g.fillRoundedRect(4, 2, w - 8, h * 0.35, 5);
+      // Nose
+      g.fillStyle(0x2a1a1a, 1);
+      g.fillEllipse(w / 2, h * 0.28, w * 0.38, h * 0.22);
+      // Eyes — gentle, slightly narrowed
+      g.fillStyle(0x1a1010, 1);
+      g.fillCircle(w * 0.3, h * 0.2, 2.5);
+      g.fillCircle(w * 0.7, h * 0.2, 2.5);
+      g.fillStyle(0xffffff, 0.7);
+      g.fillCircle(w * 0.3 + 1, h * 0.2 - 1, 1);
+      g.fillCircle(w * 0.7 + 1, h * 0.2 - 1, 1);
+
+    } else if (name === 'Gruff') {
+      // PLACEHOLDER — replace with Gruff sprite sheet
+      // Large, dark charcoal, stocky — dominant male koala
+      // Heavy set ears — smaller relative to body, darker
+      g.fillStyle(0x2a2828, 1);
+      g.fillCircle(7, -5, 9);
+      g.fillCircle(w - 7, -5, 9);
+      // Very faint inner ear — darker, battle-scarred
+      g.fillStyle(0x6a4040, 0.6);
+      g.fillCircle(7, -5, 5);
+      g.fillCircle(w - 7, -5, 5);
+      // Body — dark charcoal, stocky and wide
+      g.fillStyle(0x2a2828, 1);
+      g.fillRoundedRect(0, 0, w, h, 5);
+      // Brown chest scent gland patch — distinctive male koala feature
+      g.fillStyle(0x6a3a20, 1);
+      g.fillEllipse(w / 2, h * 0.45, w * 0.45, h * 0.38);
+      // Lighter centre of chest patch
+      g.fillStyle(0x8a5030, 0.7);
+      g.fillEllipse(w / 2, h * 0.43, w * 0.25, h * 0.2);
+      // Heavy brow ridge
+      g.fillStyle(0x1a1818, 1);
+      g.fillRect(w * 0.15, h * 0.12, w * 0.7, 4);
+      // Eyes — deep set, narrow, intimidating
+      g.fillStyle(0x8a2020, 1);
+      g.fillCircle(w * 0.28, h * 0.24, 3.5);
+      g.fillCircle(w * 0.72, h * 0.24, 3.5);
+      g.fillStyle(0x111111, 1);
+      g.fillCircle(w * 0.28, h * 0.24, 2);
+      g.fillCircle(w * 0.72, h * 0.24, 2);
+      // Nose — wide, dark
+      g.fillStyle(0x111111, 1);
+      g.fillEllipse(w / 2, h * 0.35, w * 0.42, h * 0.2);
+      // Scar across left side
+      g.lineStyle(1.5, 0x6a5040, 0.7);
+      g.lineBetween(w * 0.1, h * 0.28, w * 0.35, h * 0.42);
     }
 
-    // Name label
+    // Name label — colour-coded per character
+    const labelColor = name === 'Ko' ? '#aaffaa' : name === 'Gruff' ? '#ff8888' : '#ffddaa';
     const label = this.add.text(w / 2, h + 8, name, {
       fontSize: '9px',
       fontFamily: 'monospace',
-      color: '#ffffff',
-      backgroundColor: '#00000066',
+      color: labelColor,
+      backgroundColor: '#00000088',
       padding: { x: 3, y: 1 },
     }).setOrigin(0.5, 0);
 
     // Role label
-    const roleLabel = this.add.text(w / 2, -14, role, {
+    const roleLabel = this.add.text(w / 2, -18, role, {
       fontSize: '8px',
       fontFamily: 'monospace',
       color: '#ffffffaa',
