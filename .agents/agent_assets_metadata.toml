@@ -1,5 +1,10 @@
 uploads = []
-generated = []
+
+[[generated]]
+id = "grO5Pt7u8yMrnxCyAyUu-"
+uri = "file://client/public/images/gruff-koala.png"
+type = "image"
+title = "gruff alpha male koala portrait"
 
 [[outputs]]
 id = "FlQiurZkWPzwDDRZV1OLH"

@@ -99,7 +99,7 @@ const characters: CharacterData[] = [
     name: "Gruff",
     species: "Alpha Male Koala",
     role: "Catalyst",
-    image: "/images/ko-koala.png",
+    image: "/images/gruff-koala.png",
     description: "The aggressive pride male whose territorial behaviour drives Ko to seek new lands. Gruff represents the harsh realities of koala social hierarchy. While an antagonist at first, later episodes may reveal a more complex character.",
     traits: ["Dominant", "Territorial", "Complex", "Traditional"],
     icon: Crown,
